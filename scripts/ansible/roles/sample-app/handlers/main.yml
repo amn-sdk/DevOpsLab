@@ -1,0 +1,6 @@
+---
+- name: Restart node app
+  ansible.builtin.systemd:
+    name: node-app
+    state: restarted
+  become: true

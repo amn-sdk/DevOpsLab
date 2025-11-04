@@ -1,0 +1,79 @@
+---
+- name: Detect OS
+  ansible.builtin.debug:
+    msg: "Distrib={{ ansible_facts.distribution }} Version={{ ansible_facts.distribution_version }}"
+
+- name: Install Node.js 18 on Amazon Linux 2023
+  ansible.builtin.dnf:
+    name:
+      - nodejs
+      - npm
+    state: present
+  become: true
+  when:
+    - ansible_facts.distribution == "Amazon"
+    - ansible_facts.distribution_version is search("2023")
+
+- name: Enable nodejs16 extras on Amazon Linux 2
+  ansible.builtin.command: amazon-linux-extras enable nodejs16
+  args:
+    creates: /etc/yum.repos.d/amzn2-extras.repo
+  become: true
+  when:
+    - ansible_facts.distribution == "Amazon"
+    - ansible_facts.distribution_major_version == "2"
+
+- name: Install Node.js on Amazon Linux 2
+  ansible.builtin.yum:
+    name: nodejs
+    state: present
+  become: true
+  when:
+    - ansible_facts.distribution == "Amazon"
+    - ansible_facts.distribution_major_version == "2"
+
+- name: Create app directory
+  ansible.builtin.file:
+    path: /opt/node-app
+    state: directory
+    owner: ec2-user
+    group: ec2-user
+    mode: '0755'
+  become: true
+
+- name: Copy sample app
+  ansible.builtin.copy:
+    src: app.js
+    dest: /opt/node-app/app.js
+    owner: ec2-user
+    group: ec2-user
+    mode: '0755'
+  become: true
+
+- name: Install systemd unit for node app
+  ansible.builtin.copy:
+    dest: /etc/systemd/system/node-app.service
+    content: |
+      [Unit]
+      Description=Simple Node app
+      After=network.target
+
+      [Service]
+      ExecStart=/usr/bin/node /opt/node-app/app.js
+      Restart=always
+      User=ec2-user
+      Environment=PORT=8080
+      WorkingDirectory=/opt/node-app
+
+      [Install]
+      WantedBy=multi-user.target
+  become: true
+  notify: Restart node app
+
+- name: Enable and start service
+  ansible.builtin.systemd:
+    name: node-app
+    daemon_reload: true
+    enabled: true
+    state: started
+  become: true

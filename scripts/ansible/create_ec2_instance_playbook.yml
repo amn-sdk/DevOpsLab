@@ -1,0 +1,28 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  collections: [amazon.aws]
+  vars:
+    aws_region: us-east-2
+    image_id: ami-0900fe555666598a2
+    instance_type: t3.micro
+    key_name: ansible-ch2
+    desired_count: 3
+  tasks:
+    - name: Launch EC2 instances
+      amazon.aws.ec2_instance:
+        region: "{{ aws_region }}"
+        image_id: "{{ image_id }}"
+        instance_type: "{{ instance_type }}"
+        key_name: "{{ key_name }}"
+        count: "{{ desired_count }}"
+        tags:
+          Name: sample-app-ansible
+          Ansible: ch2
+        security_group: sample-app-ansible
+        wait: true
+      register: ec2_instances
+
+    - name: Show created instances
+      debug:
+        var: ec2_instances.instances
