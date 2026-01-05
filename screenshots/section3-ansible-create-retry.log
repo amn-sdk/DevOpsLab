@@ -1,0 +1,915 @@
+
+PLAY [localhost] ***************************************************************
+
+TASK [Launch EC2 instances] ****************************************************
+changed: [localhost]
+
+TASK [Show created instances] **************************************************
+ok: [localhost] => {
+    "ec2_instances.instances": [
+        {
+            "ami_launch_index": 2,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2025-11-04T14:08:41+00:00",
+                        "delete_on_termination": true,
+                        "status": "attached",
+                        "volume_id": "vol-096c22724a240e681"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "e91588d86dec4227880fce51d39f61e5",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-00d5815d99dd84b03",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2025-11-04T14:08:40+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "applied"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-3-15-214-184.us-east-2.compute.amazonaws.com",
+                        "public_ip": "3.15.214.184"
+                    },
+                    "attachment": {
+                        "attach_time": "2025-11-04T14:08:40+00:00",
+                        "attachment_id": "eni-attach-0364dede8bfd9a853",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attached"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:5c:d9:51:3f:ad",
+                    "network_interface_id": "eni-0e9556251305f28f1",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-2-203.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.2.203",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-3-15-214-184.us-east-2.compute.amazonaws.com",
+                                "public_ip": "3.15.214.184"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-2-203.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.2.203"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-2-203.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.2.203",
+            "product_codes": [],
+            "public_dns_name": "ec2-3-15-214-184.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "3.15.214.184",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 16,
+                "name": "running"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2025-11-04T14:08:40+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        },
+        {
+            "ami_launch_index": 0,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2025-11-04T14:08:41+00:00",
+                        "delete_on_termination": true,
+                        "status": "attached",
+                        "volume_id": "vol-030bd33e2d90141e9"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "e91588d86dec4227880fce51d39f61e5",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-0b486a791b2c4e111",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2025-11-04T14:08:40+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "applied"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-3-133-141-63.us-east-2.compute.amazonaws.com",
+                        "public_ip": "3.133.141.63"
+                    },
+                    "attachment": {
+                        "attach_time": "2025-11-04T14:08:40+00:00",
+                        "attachment_id": "eni-attach-0c4973391254c9200",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attached"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:bd:9b:db:25:63",
+                    "network_interface_id": "eni-03631d52cc03f859c",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-12-118.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.12.118",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-3-133-141-63.us-east-2.compute.amazonaws.com",
+                                "public_ip": "3.133.141.63"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-12-118.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.12.118"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-12-118.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.12.118",
+            "product_codes": [],
+            "public_dns_name": "ec2-3-133-141-63.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "3.133.141.63",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 16,
+                "name": "running"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2025-11-04T14:08:40+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        },
+        {
+            "ami_launch_index": 1,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2025-11-04T14:08:41+00:00",
+                        "delete_on_termination": true,
+                        "status": "attached",
+                        "volume_id": "vol-0f1b13d4c8d08f905"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "e91588d86dec4227880fce51d39f61e5",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-00b7d05ae1b3755d2",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2025-11-04T14:08:40+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "applied"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-3-14-141-128.us-east-2.compute.amazonaws.com",
+                        "public_ip": "3.14.141.128"
+                    },
+                    "attachment": {
+                        "attach_time": "2025-11-04T14:08:40+00:00",
+                        "attachment_id": "eni-attach-07e4f4f4d96c2a8dd",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attached"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:6b:ba:7e:dc:e1",
+                    "network_interface_id": "eni-0b073ef4d65699535",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-6-135.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.6.135",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-3-14-141-128.us-east-2.compute.amazonaws.com",
+                                "public_ip": "3.14.141.128"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-6-135.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.6.135"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-6-135.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.6.135",
+            "product_codes": [],
+            "public_dns_name": "ec2-3-14-141-128.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "3.14.141.128",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 16,
+                "name": "running"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2025-11-04T14:08:40+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        },
+        {
+            "ami_launch_index": 1,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2025-11-04T14:04:57+00:00",
+                        "delete_on_termination": true,
+                        "status": "attached",
+                        "volume_id": "vol-014f28eb4db5dc34e"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "b6556701c14c48d29cd97c32a24fdc31",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-0b9aa42838b3826e1",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2025-11-04T14:04:56+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "applied"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-18-225-54-247.us-east-2.compute.amazonaws.com",
+                        "public_ip": "18.225.54.247"
+                    },
+                    "attachment": {
+                        "attach_time": "2025-11-04T14:04:56+00:00",
+                        "attachment_id": "eni-attach-0eeb51480ab006c55",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attached"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:56:6b:b5:5c:6b",
+                    "network_interface_id": "eni-0588b6e0e14997c66",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-11-95.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.11.95",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-18-225-54-247.us-east-2.compute.amazonaws.com",
+                                "public_ip": "18.225.54.247"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-11-95.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.11.95"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-11-95.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.11.95",
+            "product_codes": [],
+            "public_dns_name": "ec2-18-225-54-247.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "18.225.54.247",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 16,
+                "name": "running"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2025-11-04T14:04:56+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        },
+        {
+            "ami_launch_index": 2,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2025-11-04T14:04:57+00:00",
+                        "delete_on_termination": true,
+                        "status": "attached",
+                        "volume_id": "vol-0d2d57c8b059082f8"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "b6556701c14c48d29cd97c32a24fdc31",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-0dc3df90518ec7e4c",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2025-11-04T14:04:56+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "applied"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-18-221-126-92.us-east-2.compute.amazonaws.com",
+                        "public_ip": "18.221.126.92"
+                    },
+                    "attachment": {
+                        "attach_time": "2025-11-04T14:04:56+00:00",
+                        "attachment_id": "eni-attach-0870776dd62a0873f",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attached"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:4d:1e:84:00:eb",
+                    "network_interface_id": "eni-06097ba46b92a50b5",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-9-31.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.9.31",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-18-221-126-92.us-east-2.compute.amazonaws.com",
+                                "public_ip": "18.221.126.92"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-9-31.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.9.31"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-9-31.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.9.31",
+            "product_codes": [],
+            "public_dns_name": "ec2-18-221-126-92.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "18.221.126.92",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 16,
+                "name": "running"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2025-11-04T14:04:56+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        },
+        {
+            "ami_launch_index": 0,
+            "architecture": "x86_64",
+            "block_device_mappings": [
+                {
+                    "device_name": "/dev/xvda",
+                    "ebs": {
+                        "attach_time": "2026-01-03T15:57:47+00:00",
+                        "delete_on_termination": true,
+                        "status": "attaching",
+                        "volume_id": "vol-0b047b9c1beb0f580"
+                    }
+                }
+            ],
+            "boot_mode": "uefi-preferred",
+            "capacity_reservation_specification": {
+                "capacity_reservation_preference": "open"
+            },
+            "client_token": "9d19725d4c1347a4aad0da43da669cb4",
+            "cpu_options": {
+                "core_count": 1,
+                "threads_per_core": 2
+            },
+            "current_instance_boot_mode": "uefi",
+            "ebs_optimized": false,
+            "ena_support": true,
+            "enclave_options": {
+                "enabled": false
+            },
+            "hibernation_options": {
+                "configured": false
+            },
+            "hypervisor": "xen",
+            "image_id": "ami-0900fe555666598a2",
+            "instance_id": "i-02acf4cd3628fdcf4",
+            "instance_type": "t3.micro",
+            "key_name": "ansible-ch2",
+            "launch_time": "2026-01-03T15:57:46+00:00",
+            "maintenance_options": {
+                "auto_recovery": "default",
+                "reboot_migration": "default"
+            },
+            "metadata_options": {
+                "http_endpoint": "enabled",
+                "http_protocol_ipv6": "disabled",
+                "http_put_response_hop_limit": 2,
+                "http_tokens": "required",
+                "instance_metadata_tags": "disabled",
+                "state": "pending"
+            },
+            "monitoring": {
+                "state": "disabled"
+            },
+            "network_interfaces": [
+                {
+                    "association": {
+                        "ip_owner_id": "amazon",
+                        "public_dns_name": "ec2-3-149-231-247.us-east-2.compute.amazonaws.com",
+                        "public_ip": "3.149.231.247"
+                    },
+                    "attachment": {
+                        "attach_time": "2026-01-03T15:57:46+00:00",
+                        "attachment_id": "eni-attach-03d3ef003f6857c15",
+                        "delete_on_termination": true,
+                        "device_index": 0,
+                        "network_card_index": 0,
+                        "status": "attaching"
+                    },
+                    "description": "",
+                    "groups": [
+                        {
+                            "group_id": "sg-0e79a47162b65a32a",
+                            "group_name": "sample-app-ansible"
+                        }
+                    ],
+                    "interface_type": "interface",
+                    "ipv6_addresses": [],
+                    "mac_address": "02:c1:64:6a:65:df",
+                    "network_interface_id": "eni-05bba3187eb63608f",
+                    "operator": {
+                        "managed": false
+                    },
+                    "owner_id": "241474165125",
+                    "private_dns_name": "ip-172-31-11-27.us-east-2.compute.internal",
+                    "private_ip_address": "172.31.11.27",
+                    "private_ip_addresses": [
+                        {
+                            "association": {
+                                "ip_owner_id": "amazon",
+                                "public_dns_name": "ec2-3-149-231-247.us-east-2.compute.amazonaws.com",
+                                "public_ip": "3.149.231.247"
+                            },
+                            "primary": true,
+                            "private_dns_name": "ip-172-31-11-27.us-east-2.compute.internal",
+                            "private_ip_address": "172.31.11.27"
+                        }
+                    ],
+                    "source_dest_check": true,
+                    "status": "in-use",
+                    "subnet_id": "subnet-0d9352743a0cf4858",
+                    "vpc_id": "vpc-0e0a50be28ba6f5c9"
+                }
+            ],
+            "network_performance_options": {
+                "bandwidth_weighting": "default"
+            },
+            "operator": {
+                "managed": false
+            },
+            "placement": {
+                "availability_zone": "us-east-2a",
+                "availability_zone_id": "use2-az1",
+                "group_name": "",
+                "tenancy": "default"
+            },
+            "platform_details": "Linux/UNIX",
+            "private_dns_name": "ip-172-31-11-27.us-east-2.compute.internal",
+            "private_dns_name_options": {
+                "enable_resource_name_dns_a_record": false,
+                "enable_resource_name_dns_aaaa_record": false,
+                "hostname_type": "ip-name"
+            },
+            "private_ip_address": "172.31.11.27",
+            "product_codes": [],
+            "public_dns_name": "ec2-3-149-231-247.us-east-2.compute.amazonaws.com",
+            "public_ip_address": "3.149.231.247",
+            "root_device_name": "/dev/xvda",
+            "root_device_type": "ebs",
+            "security_groups": [
+                {
+                    "group_id": "sg-0e79a47162b65a32a",
+                    "group_name": "sample-app-ansible"
+                }
+            ],
+            "source_dest_check": true,
+            "state": {
+                "code": 0,
+                "name": "pending"
+            },
+            "state_transition_reason": "",
+            "subnet_id": "subnet-0d9352743a0cf4858",
+            "tags": {
+                "Ansible": "ch2",
+                "Name": "sample-app-ansible"
+            },
+            "usage_operation": "RunInstances",
+            "usage_operation_update_time": "2026-01-03T15:57:46+00:00",
+            "virtualization_type": "hvm",
+            "vpc_id": "vpc-0e0a50be28ba6f5c9"
+        }
+    ]
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

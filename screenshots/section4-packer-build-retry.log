@@ -1,0 +1,95 @@
+[1;32mamazon-ebs.amazon_linux: output will be in this color.[0m
+
+[1;32m==> amazon-ebs.amazon_linux: Prevalidating any provided VPC information[0m
+[1;32m==> amazon-ebs.amazon_linux: Prevalidating AMI Name: sample-app-packer-be3743f5-9bd5-44a0-80e3-bcc5e7212b76[0m
+[1;32m==> amazon-ebs.amazon_linux: Found Image ID: ami-00e428798e77d38d9[0m
+[1;32m==> amazon-ebs.amazon_linux: Creating temporary keypair: packer_69594366-a9d5-afcf-cd08-ccb41eb0ade1[0m
+[1;32m==> amazon-ebs.amazon_linux: Creating temporary security group for this instance: packer_69594368-e1fd-74b0-8672-a4f2e136a46a[0m
+[1;32m==> amazon-ebs.amazon_linux: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
+[1;32m==> amazon-ebs.amazon_linux: Launching a source AWS instance...[0m
+[1;32m==> amazon-ebs.amazon_linux: Instance ID: i-061de21b312f38d8c[0m
+[1;32m==> amazon-ebs.amazon_linux: Waiting for instance (i-061de21b312f38d8c) to become ready...[0m
+[1;32m==> amazon-ebs.amazon_linux: Using SSH communicator to connect: 3.144.239.109[0m
+[1;32m==> amazon-ebs.amazon_linux: Waiting for SSH to become available...[0m
+[1;32m==> amazon-ebs.amazon_linux: Connected to SSH![0m
+[1;32m==> amazon-ebs.amazon_linux: Uploading app.js => /home/ec2-user/app.js[0m
+[0;32m    amazon-ebs.amazon_linux: app.js[0m 285 B / 285 B  100.00%
+[1A[0;32m    amazon-ebs.amazon_linux: app.js[0m 285 B / 285 B  100.00%
+[1A[0;32m    amazon-ebs.amazon_linux: app.js[0m 285 B / 285 B  100.00% 0s
+[1;32m==> amazon-ebs.amazon_linux: Pausing 30s before the next provisioner...[0m
+[1;32m==> amazon-ebs.amazon_linux: Provisioning with shell script: /var/folders/nn/gm0vjbfd49l7cv84v8rdc58w0000gn/T/packer-shell3829774586[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - Cleaning up old repositories...[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - Old repositories removed[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - Supported architecture: x86_64[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - dnf available, updating...[0m[0m
+[1;31m==> amazon-ebs.amazon_linux: Error: Unknown repo: 'nodesource-nsolid'[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - Repository is configured and updated.[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - Run 'dnf install nodejs -y' to complete the installation.[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [38;5;79m2026-01-03 16:28:15 - You can use N|solid Runtime as a node.js alternative[0m[0m
+[1;32m==> amazon-ebs.amazon_linux: [1;32m2026-01-03 16:28:15 - To install N|solid Runtime, run: dnf install nsolid -y[0m
+[1;32m==> amazon-ebs.amazon_linux: [0m[0m
+[1;32m==> amazon-ebs.amazon_linux: Node.js Packages for Linux RPM based distros -  1.1 MB/s | 347 kB     00:00[0m
+[1;32m==> amazon-ebs.amazon_linux: Amazon Linux 2023 Kernel Livepatch repository   246 kB/s |  29 kB     00:00[0m
+[1;32m==> amazon-ebs.amazon_linux: Dependencies resolved.[0m
+[1;32m==> amazon-ebs.amazon_linux: ================================================================================[0m
+[1;32m==> amazon-ebs.amazon_linux:  Package     Arch        Version                   Repository              Size[0m
+[1;32m==> amazon-ebs.amazon_linux: ================================================================================[0m
+[1;32m==> amazon-ebs.amazon_linux: Installing:[0m
+[1;32m==> amazon-ebs.amazon_linux:  nodejs      x86_64      2:21.7.3-1nodesource      nodesource-nodejs       38 M[0m
+[1;32m==> amazon-ebs.amazon_linux:[0m
+[1;32m==> amazon-ebs.amazon_linux: Transaction Summary[0m
+[1;32m==> amazon-ebs.amazon_linux: ================================================================================[0m
+[1;32m==> amazon-ebs.amazon_linux: Install  1 Package[0m
+[1;32m==> amazon-ebs.amazon_linux:[0m
+[1;32m==> amazon-ebs.amazon_linux: Total download size: 38 M[0m
+[1;32m==> amazon-ebs.amazon_linux: Installed size: 108 M[0m
+[1;32m==> amazon-ebs.amazon_linux: Downloading Packages:[0m
+[1;32m==> amazon-ebs.amazon_linux: nodejs-21.7.3-1nodesource.x86_64.rpm             49 MB/s |  38 MB     00:00[0m
+[1;32m==> amazon-ebs.amazon_linux: --------------------------------------------------------------------------------[0m
+[1;32m==> amazon-ebs.amazon_linux: Total                                            49 MB/s |  38 MB     00:00[0m
+[1;32m==> amazon-ebs.amazon_linux: Node.js Packages for Linux RPM based distros -   52 kB/s | 3.1 kB     00:00[0m
+[1;31m==> amazon-ebs.amazon_linux: Importing GPG key 0x3AF28A14:[0m
+[1;31m==> amazon-ebs.amazon_linux:  Userid     : "Nodesource Operations <operations@nodesource.com>"[0m
+[1;31m==> amazon-ebs.amazon_linux:  Fingerprint: 242B 8138 31AF 0956 2B6C 46F7 6B88 DA4E 3AF2 8A14[0m
+[1;31m==> amazon-ebs.amazon_linux:  From       : https://rpm.nodesource.com/gpgkey/ns-operations-public.key[0m
+[1;32m==> amazon-ebs.amazon_linux: Key imported successfully[0m
+[1;32m==> amazon-ebs.amazon_linux: Running transaction check[0m
+[1;32m==> amazon-ebs.amazon_linux: Transaction check succeeded.[0m
+[1;32m==> amazon-ebs.amazon_linux: Running transaction test[0m
+[1;32m==> amazon-ebs.amazon_linux: Transaction test succeeded.[0m
+[1;32m==> amazon-ebs.amazon_linux: Running transaction[0m
+[1;32m==> amazon-ebs.amazon_linux:   Preparing        :                                                        1/1[0m
+[1;32m==> amazon-ebs.amazon_linux:   Running scriptlet: nodejs-2:21.7.3-1nodesource.x86_64                     1/1[0m
+[1;32m==> amazon-ebs.amazon_linux:   Installing       : nodejs-2:21.7.3-1nodesource.x86_64                     1/1[0m
+[1;32m==> amazon-ebs.amazon_linux:   Running scriptlet: nodejs-2:21.7.3-1nodesource.x86_64                     1/1[0m
+[1;32m==> amazon-ebs.amazon_linux:   Verifying        : nodejs-2:21.7.3-1nodesource.x86_64                     1/1[0m
+[1;32m==> amazon-ebs.amazon_linux:[0m
+[1;32m==> amazon-ebs.amazon_linux: Installed:[0m
+[1;32m==> amazon-ebs.amazon_linux:   nodejs-2:21.7.3-1nodesource.x86_64[0m
+[1;32m==> amazon-ebs.amazon_linux:[0m
+[1;32m==> amazon-ebs.amazon_linux: Complete![0m
+[1;32m==> amazon-ebs.amazon_linux: Stopping the source instance...[0m
+[1;32m==> amazon-ebs.amazon_linux: Stopping instance[0m
+[1;32m==> amazon-ebs.amazon_linux: Waiting for the instance to stop...[0m
+[1;32m==> amazon-ebs.amazon_linux: Creating AMI sample-app-packer-be3743f5-9bd5-44a0-80e3-bcc5e7212b76 from instance i-061de21b312f38d8c[0m
+[1;32m==> amazon-ebs.amazon_linux: Attaching run tags to AMI...[0m
+[1;32m==> amazon-ebs.amazon_linux: AMI: ami-09a734dddd73e45a3[0m
+[1;32m==> amazon-ebs.amazon_linux: Waiting for AMI to become ready...[0m
+[1;32m==> amazon-ebs.amazon_linux: Skipping Enable AMI deprecation...[0m
+[1;32m==> amazon-ebs.amazon_linux: Skipping Enable AMI deregistration protection...[0m
+[1;32m==> amazon-ebs.amazon_linux: Modifying attributes on AMI (ami-09a734dddd73e45a3)...[0m
+[1;32m==> amazon-ebs.amazon_linux: Modifying: description[0m
+[1;32m==> amazon-ebs.amazon_linux: Modifying attributes on snapshot (snap-090a63a9830dfb9a1)...[0m
+[1;32m==> amazon-ebs.amazon_linux: Terminating the source AWS instance...[0m
+[1;32m==> amazon-ebs.amazon_linux: Cleaning up any extra volumes...[0m
+[1;32m==> amazon-ebs.amazon_linux: No volumes to clean up, skipping[0m
+[1;32m==> amazon-ebs.amazon_linux: Deleting temporary security group...[0m
+[1;32m==> amazon-ebs.amazon_linux: Deleting temporary keypair...[0m
+[1;32mBuild 'amazon-ebs.amazon_linux' finished after 4 minutes 45 seconds.[0m
+
+==> Wait completed after 4 minutes 45 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs.amazon_linux: AMIs were created:
+us-east-2: ami-09a734dddd73e45a3
+

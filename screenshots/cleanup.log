@@ -1,0 +1,62 @@
+=========================================
+  AWS TD2 Cleanup Script
+=========================================
+Region: us-east-2
+Tag filter: Name=tag:Name,Values=sample-app*
+
+[1/4] Checking for running instances...
+    Found instances: i-00d5815d99dd84b03	i-0b486a791b2c4e111	i-00b7d05ae1b3755d2
+i-02acf4cd3628fdcf4
+i-0b9aa42838b3826e1	i-0dc3df90518ec7e4c
+i-063a625c04bb24a89
+i-052575be8f034246c
+    Terminating instances...
+    ✅ Instances terminated
+    Waiting for instances to terminate...
+    ✅ Instances fully terminated
+
+[2/4] Checking for security groups...
+    Found security groups: sg-0e79a47162b65a32a	sg-044f05fff3fc02eec	sg-0426c18744d41ce01
+    Deleting security group sg-0e79a47162b65a32a...
+{
+    "Return": true,
+    "GroupId": "sg-0e79a47162b65a32a"
+}
+    Deleting security group sg-044f05fff3fc02eec...
+{
+    "Return": true,
+    "GroupId": "sg-044f05fff3fc02eec"
+}
+    Deleting security group sg-0426c18744d41ce01...
+{
+    "Return": true,
+    "GroupId": "sg-0426c18744d41ce01"
+}
+    ✅ Security groups cleanup attempted
+
+[3/4] Checking for Packer AMIs...
+    Found Packer AMIs:
+      - ami-09a734dddd73e45a3	sample-app-packer-be3743f5-9bd5-44a0-80e3-bcc5e7212b76	2026-01-03T16:30:09.000Z
+
+    ⚠️  AMIs NOT deleted automatically (to prevent accidental data loss)
+    To delete an AMI manually:
+      aws ec2 deregister-image --image-id ami-xxxxxxxxxxxxx
+
+[4/4] Checking for Ansible key pairs...
+    Found key pairs: ansible-ch2
+    Deleting key pair ansible-ch2...
+{
+    "Return": true,
+    "KeyPairId": "key-01c5ccaa32d255ee6"
+}
+    ✅ Key pairs deleted
+
+=========================================
+  Cleanup Complete
+=========================================
+
+Verification commands:
+  aws ec2 describe-instances --filters "Name=tag:Name,Values=sample-app*"
+  aws ec2 describe-security-groups --filters "Name=group-name,Values=sample-app*"
+  aws ec2 describe-images --owners self --filters "Name=name,Values=sample-app-packer-*"
+

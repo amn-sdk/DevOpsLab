@@ -18,7 +18,7 @@ resource "aws_security_group_rule" "allow_http_inbound" {
 
 resource "aws_instance" "sample_app" {                         
   ami                    = var.ami_id                          
-  instance_type          = "t2.micro"
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.sample_app.id]
   user_data              = file("${path.module}/user-data.sh") 
 

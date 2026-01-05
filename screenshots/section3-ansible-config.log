@@ -1,0 +1,43 @@
+
+PLAY [Configure the EC2 instance(s) to run a sample app] ***********************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Platform linux on host public-ip-address is using the discovered
+Python interpreter at /usr/bin/python3.9, but future installation of another
+Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.15/reference_appendices/interpreter_discovery.html for more information.
+ok: [public-ip-address]
+
+TASK [sample-app : Detect OS] **************************************************
+ok: [public-ip-address] => {
+    "msg": "Distrib=Amazon Version=2023"
+}
+
+TASK [sample-app : Install Node.js 18 on Amazon Linux 2023] ********************
+changed: [public-ip-address]
+
+TASK [sample-app : Enable nodejs16 extras on Amazon Linux 2] *******************
+skipping: [public-ip-address]
+
+TASK [sample-app : Install Node.js on Amazon Linux 2] **************************
+skipping: [public-ip-address]
+
+TASK [sample-app : Create app directory] ***************************************
+changed: [public-ip-address]
+
+TASK [sample-app : Copy sample app] ********************************************
+changed: [public-ip-address]
+
+TASK [sample-app : Install systemd unit for node app] **************************
+changed: [public-ip-address]
+
+TASK [sample-app : Enable and start service] ***********************************
+changed: [public-ip-address]
+
+RUNNING HANDLER [sample-app : Restart node app] ********************************
+changed: [public-ip-address]
+
+PLAY RECAP *********************************************************************
+public-ip-address          : ok=8    changed=6    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+

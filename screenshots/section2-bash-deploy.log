@@ -1,0 +1,17 @@
+[*] Region = us-east-2
+    Default VPC: vpc-0e0a50be28ba6f5c9
+[*] Checking/creating Security Group 'sample-app'...
+    Found SG: sg-0426c18744d41ce01
+[*] Resolving AL2023 AMI via SSM...
+    AMI_ID = ami-00e428798e77d38d9
+    INSTANCE_TYPE = t3.micro
+[*] Launching EC2 instance...
+    Instance = i-063a625c04bb24a89
+[*] Waiting for instance to be running...
+    Instance is running.
+---------------------------------------
+INSTANCE_ID      = i-063a625c04bb24a89
+SG_ID            = sg-0426c18744d41ce01
+PUBLIC_IP        = 18.118.159.58
+---------------------------------------
+Test:  http://18.118.159.58

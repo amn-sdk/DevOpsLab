@@ -1,0 +1,14 @@
+# Terraform/OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+*.key
+*.pem

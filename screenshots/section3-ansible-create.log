@@ -1,0 +1,10 @@
+
+PLAY [localhost] ***************************************************************
+
+TASK [Launch EC2 instances] ****************************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: botocore.exceptions.ClientError: An error occurred (VcpuLimitExceeded) when calling the RunInstances operation: You have requested more vCPU capacity than your current vCPU limit of 16 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit.
+fatal: [localhost]: FAILED! => {"boto3_version": "1.40.65", "botocore_version": "1.40.65", "changed": false, "error": {"code": "VcpuLimitExceeded", "message": "You have requested more vCPU capacity than your current vCPU limit of 16 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit."}, "msg": "Failed to create new EC2 instance: An error occurred (VcpuLimitExceeded) when calling the RunInstances operation: You have requested more vCPU capacity than your current vCPU limit of 16 allows for the instance bucket that the specified instance type belongs to. Please visit http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit.", "response_metadata": {"http_headers": {"cache-control": "no-cache, no-store", "connection": "close", "content-type": "text/xml;charset=UTF-8", "date": "Sat, 03 Jan 2026 15:44:08 GMT", "server": "AmazonEC2", "strict-transport-security": "max-age=31536000; includeSubDomains", "transfer-encoding": "chunked", "vary": "accept-encoding", "x-amzn-requestid": "35e2aeb0-5065-4ec7-90e0-d39490076819"}, "http_status_code": 400, "request_id": "35e2aeb0-5065-4ec7-90e0-d39490076819", "retry_attempts": 0}}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

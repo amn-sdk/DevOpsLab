@@ -1,0 +1,24 @@
+[1;32mamazon-ebs.amazon_linux: output will be in this color.[0m
+
+[1;32m==> amazon-ebs.amazon_linux: Prevalidating any provided VPC information[0m
+[1;32m==> amazon-ebs.amazon_linux: Prevalidating AMI Name: sample-app-packer-79001dc7-1c5b-4a53-b83b-408f5ce4513a[0m
+[1;32m==> amazon-ebs.amazon_linux: Found Image ID: ami-0900fe555666598a2[0m
+[1;32m==> amazon-ebs.amazon_linux: Creating temporary keypair: packer_69594346-a157-fa8e-abf8-a0819dde9ede[0m
+[1;32m==> amazon-ebs.amazon_linux: Creating temporary security group for this instance: packer_69594348-1258-e0f7-a205-e93179840f0e[0m
+[1;32m==> amazon-ebs.amazon_linux: Authorizing access to port 22 from [0.0.0.0/0] in the temporary security groups...[0m
+[1;32m==> amazon-ebs.amazon_linux: Launching a source AWS instance...[0m
+[1;31m==> amazon-ebs.amazon_linux: Error launching source instance: InvalidParameterCombination: The specified instance type is not eligible for Free Tier. For a list of Free Tier instance types, run 'describe-instance-types' with the filter 'free-tier-eligible=true'.
+==> amazon-ebs.amazon_linux: 	status code: 400, request id: 2cd1e857-134a-4395-9531-616f13a08d95[0m
+[1;32m==> amazon-ebs.amazon_linux: No volumes to clean up, skipping[0m
+[1;32m==> amazon-ebs.amazon_linux: Deleting temporary security group...[0m
+[1;32m==> amazon-ebs.amazon_linux: Deleting temporary keypair...[0m
+[1;31mBuild 'amazon-ebs.amazon_linux' errored after 6 seconds 854 milliseconds: Error launching source instance: InvalidParameterCombination: The specified instance type is not eligible for Free Tier. For a list of Free Tier instance types, run 'describe-instance-types' with the filter 'free-tier-eligible=true'.
+	status code: 400, request id: 2cd1e857-134a-4395-9531-616f13a08d95[0m
+
+==> Wait completed after 6 seconds 854 milliseconds
+
+==> Some builds didn't complete successfully and had errors:
+--> amazon-ebs.amazon_linux: Error launching source instance: InvalidParameterCombination: The specified instance type is not eligible for Free Tier. For a list of Free Tier instance types, run 'describe-instance-types' with the filter 'free-tier-eligible=true'.
+	status code: 400, request id: 2cd1e857-134a-4395-9531-616f13a08d95
+
+==> Builds finished but no artifacts were created.

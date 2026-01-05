@@ -10,9 +10,9 @@ packer {
 source "amazon-ebs" "amazon_linux" {                  
   ami_name        = "sample-app-packer-${uuidv4()}"
   ami_description = "Amazon Linux 2023 AMI with a Node.js sample app."
-  instance_type   = "t2.micro"
+  instance_type   = "t3.micro"
   region          = "us-east-2"
-  source_ami      = "ami-0900fe555666598a2"
+  source_ami      = "ami-00e428798e77d38d9"
   ssh_username    = "ec2-user"
 }
 

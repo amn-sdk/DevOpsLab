@@ -7,7 +7,7 @@
     image_id: ami-0900fe555666598a2
     instance_type: t3.micro
     key_name: ansible-ch2
-    desired_count: 3
+    desired_count: 1
   tasks:
     - name: Launch EC2 instances
       amazon.aws.ec2_instance:

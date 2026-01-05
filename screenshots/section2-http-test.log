@@ -1,0 +1,11 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    14    0    14    0     0     35      0 --:--:-- --:--:-- --:--:--    35100    14    0    14    0     0     35      0 --:--:-- --:--:-- --:--:--    35
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Date: Sat, 03 Jan 2026 15:43:34 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+Hello, World!
